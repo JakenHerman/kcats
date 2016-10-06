@@ -1,6 +1,8 @@
 # kcats
 A stack implementation for node
 
+[![NPM](https://nodei.co/npm/kcats.png)](https://nodei.co/npm/kcats/)
+
 ## Installation
 
 `npm install kcats`
