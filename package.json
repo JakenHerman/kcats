@@ -1,0 +1,15 @@
+{
+  "name": "kcats",
+  "version": "1.0.0",
+  "description": "A stack implementation in node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "data-structures",
+    "stack"
+  ],
+  "author": "Jaken Herman",
+  "license": "ISC"
+}
