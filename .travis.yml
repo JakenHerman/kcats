@@ -1,4 +1,15 @@
-before_script: chmod 0777 ./node_modules/.bin/mocha
 language: node_js
+cache:
+  directories:
+  - node_modules
+notifications:
+  email:
+    on_success: change
+    on_failure: always
+branches:
+  only: # it should help not throttle travis
+  - master
+  - /v?(\d+.){2}\d+ # for release version (i.e v0.0.1 | 0.0.1 | v1.0.0 | 1.0.0)
 node_js:
-  - "6"
+  - '6'
+before_script: chmod 0777 ./node_modules/.bin/mocha
