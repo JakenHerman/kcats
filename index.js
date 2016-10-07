@@ -1,6 +1,11 @@
 var method = kcats.prototype;
 
 function kcats(max_len, num_stacks) {
+    if(num_stacks > max_len) {
+        // Raise exception if number of stacks is more than the size of the stack itself.
+        throw new Error('Number of stacks should be lesser than maximum stack size');
+    }
+    
     this._max_len = max_len;
     this._num_stacks = num_stacks || 1;
     this._top = new Array(this._num_stacks);
