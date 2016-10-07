@@ -75,8 +75,8 @@ describe('kcats', function() {
       it('Allows you to print the element at the top of the stack without removing it.',
       function(){
           var tests = new kcats(3);
-          tests._push(453);
-          tests._push(652);
+          tests._push(453, 0);
+          tests._push(652, 0);
           var is_652_peek = tests._peek(0);
           var is_652_pop = tests._pop(0);
           assert.equal(is_652_peek, is_652_pop);
