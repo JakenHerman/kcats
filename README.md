@@ -3,6 +3,8 @@ A stack implementation for node
 
 [![NPM](https://nodei.co/npm/kcats.png)](https://nodei.co/npm/kcats/)
 
+[![Build Status](https://travis-ci.org/JakenHerman/kcats.svg?branch=master)](https://travis-ci.org/JakenHerman/kcats)
+
 ## Installation
 
 `npm install kcats`
