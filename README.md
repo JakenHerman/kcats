@@ -11,7 +11,7 @@ A stack implementation for node
 
 ## Usage 
 `var kcats = require("kcats")`
-Then use `var stack_name = new kcats(10);` where `10`, here, is the maximum size of the stack.
+Then use `var stack_name = new kcats(10, 2);` where `10`, here, is the maximum size of the total stack space, and `2` is how many stacks are created. Multiple stacks are created in one array. So the array will be 10 spaces, and stack 1 will be array space 0-4, and stack 2 will be array space 5-9. Of course, there can be more than 2 stacks.
 
 ## API
  - `stack_name._isEmpty()` -> Boolean : Determines whether or not the stack contains anything.
