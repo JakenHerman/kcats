@@ -1,6 +1,6 @@
 {
   "name": "kcats",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A stack implementation in node",
   "main": "index.js",
   "scripts": {
