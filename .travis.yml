@@ -1,8 +1,4 @@
 before_script: chmod 0777 ./node_modules/.bin/mocha
 language: node_js
 node_js:
-  - "6"
-  - "6.1"
-  - "5.11"
-  - "0.6"
-  - "iojs"
+  - "stable"
