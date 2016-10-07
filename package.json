@@ -4,13 +4,17 @@
   "description": "A stack implementation in node",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests/test.js"
   },
-  "repository" : "https://www.github.com/jakenherman/kcats/git",
+  "repository": "https://www.github.com/jakenherman/kcats/git",
   "keywords": [
     "data-structures",
     "stack"
   ],
   "author": "Jaken Herman",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "mocha": "^3.1.0"
+  }
 }

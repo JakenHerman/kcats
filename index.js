@@ -32,12 +32,12 @@ method._pop = function(){
 	return this._k[this._top--];
     }
     else {
-	return "stack is empty";
+	return "Stack is empty";
     }
 };
 
 method._peek = function(){
-    if(this._top == -1){
+    if(this._top != -1){
 	return this._k[this._top];
     }
     else {
