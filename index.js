@@ -1,51 +1,53 @@
+'use strict';
+var kcats = function (maxLen, numStacks) {
+  this._maxLen = maxLen;
+  this._numStacks = numStacks || 1;
+  this._top = new Array(this._numStacks);
+  this._k = new Array(this._maxLen);
+  this._alloc = this._maxLen / this._numStacks;
+
+  for (var i = 0; i < this._maxLen; i++) {
+    this._top[i] = this._alloc * i - 1;
+  }
+};
 var method = kcats.prototype;
 
-function kcats(max_len, num_stacks) {
-    this._max_len = max_len;
-    this._num_stacks = num_stacks || 1;
-    this._top = new Array(this._num_stacks);
-    this._k = new Array(this._max_len);
-    this._alloc = this._max_len / this._num_stacks;
-
-    for (var i = 0; i < this._max_len; i++) {
-        this._top[i] = this._alloc * i - 1;
-    }
-}
-
-method._isEmpty = function(top_index) {
-    return this._top[top_index] === this._alloc * top_index - 1;
+method._isEmpty = function(topIndex) {
+  return this._top[topIndex] === this._alloc * topIndex - 1;
 };
 
-method._reset = function(top_index) {
-    this._top[top_index] = this._alloc * top_index -1;
+method._reset = function(topIndex) {
+  this._top[topIndex] = this._alloc * topIndex - 1;
 };
 
-method._isFull = function(top_index) {
-    return this._top[top_index] === this._max_len - 1;
+method._isFull = function(topIndex) {
+  return this._top[topIndex] === this._maxLen - 1;
 };
 
-method._push = function(x, top_index) {
-    if (this._top[top_index] < this._max_len - 1) {
-	    this._k[++this._top[top_index]] = x;
-    } else {
-	    console.log('Stack overflow, element not added.');
-    }
+method._push = function(x, topIndex) {
+  if (this._top[topIndex] < this._maxLen - 1) {
+    this._k[++this._top[topIndex]] = x;
+
+    return '';
+  }
+
+  return 'Stack overflow, element not added.';
 };
 
-method._pop = function(top_index) {
-    if (this._top[top_index] !== this._alloc * top_index - 1) {
-	    return this._k[this._top[top_index]--];
-    }
+method._pop = function(topIndex) {
+  if (this._top[topIndex] !== this._alloc * topIndex - 1) {
+    return this._k[this._top[topIndex]--];
+  }
 
-    return 'Stack is empty';
+  return 'Stack is empty.';
 };
 
-method._peek = function(top_index) {
-    if (this._top[top_index] !== this._alloc * top_index - 1) {
-	    return this._k[this._top[top_index]];
-    }
+method._peek = function(topIndex) {
+  if (this._top[topIndex] !== this._alloc * topIndex - 1) {
+    return this._k[this._top[topIndex]];
+  }
 
-    return 'Stack is empty';
+  return 'Stack is empty.';
 };
 
 module.exports = kcats;

@@ -12,4 +12,3 @@ branches:
   - /v?(\d+.){2}\d+ # for release version (i.e v0.0.1 | 0.0.1 | v1.0.0 | 1.0.0)
 node_js:
   - '6'
-before_script: chmod 0777 ./node_modules/.bin/mocha

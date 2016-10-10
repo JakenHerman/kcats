@@ -4,7 +4,7 @@
   "description": "A stack implementation in node",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/test.js"
+    "test": "gulp test"
   },
   "repository": "https://www.github.com/jakenherman/kcats/git",
   "keywords": [
@@ -15,6 +15,11 @@
   "license": "ISC",
   "devDependencies": {
     "assert": "^1.4.1",
-    "mocha": "^3.1.0"
+    "eslint": "^3.7.1",
+    "eslint-config-coveo": "^1.0.2",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^3.0.1",
+    "mocha": "^3.1.0",
+    "pretty-javascript": "^1.0.0"
   }
 }
