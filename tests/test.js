@@ -115,6 +115,17 @@ describe('kcats', function() {
       isCorrectValue = stack._peek(1);
       assert.equal(isCorrectValue, 2);
     });
+
+    it('should throw an error, because an element has been added to an already full stack', function() {
+        var stack = new kcats(2);
+        var err = '';
+
+        stack._push(1, 0);
+        stack._push(2, 0);
+        err = stack._push(3, 0);
+
+        assert.equal(err, 'Stack overflow, element not added.')
+    });
   });
 
   describe('#._pop()', function() {
