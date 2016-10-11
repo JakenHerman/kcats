@@ -3,6 +3,12 @@ var assert = require('assert');
 var kcats = require('../index.js');
 
 describe('kcats', function() {
+
+  it("should not be undefined when intialized", function() {
+      var stack = new kcats(10);
+      assert(stack,!undefined);
+  });
+
   describe('#._isEmpty()', function() {
     it('Determines whether or not the stack contains anything.', function() {
       var stack = new kcats(10, 1);
@@ -42,6 +48,31 @@ describe('kcats', function() {
 
       assert.equal(isEmpty, true);
     });
+
+    var testNumbers = [
+      {blocks: 10, stacks: 2},
+      {blocks: 100, stacks: 10},
+      {blocks: 1000, stacks: 100}
+    ];
+
+    testNumbers.forEach(function(num) {
+        it('correctly filled and resetted ' + num.stacks + ' stacks',
+        function() {
+          var stack = new kcats(num.blocks, num.stacks);
+
+          for(var i=0; i < num.stacks; i++) {
+              stack._push("fill", i);
+
+              var isEmptyFalse = stack._isEmpty(i);
+              assert.equal(isEmptyFalse, false);
+
+              stack._reset(i);
+
+              var isEmptyTrue = stack._isEmpty(i);
+              assert.equal(isEmptyTrue, true);
+          }
+        });
+    });
   });
 
   describe('#._isFull()', function() {
@@ -71,7 +102,8 @@ describe('kcats', function() {
 
   describe('#._push()', function() {
     it('Allows you to add an item to the stack.', function() {
-      var stack = new kcats(3, 2);
+      var stack = new kcats(2, 2);
+      var err = '';
 
       stack._push(1, 0);
       // should be 1
@@ -83,6 +115,11 @@ describe('kcats', function() {
       stack._push(2, 1);
       isCorrectValue = stack._peek(1);
       assert.equal(isCorrectValue, 2);
+
+      // Check for full stack error
+      stack._push(3, 0);
+      err = stack._push(4, 1);
+      assert.equal(err, 'Stack overflow, element not added.');
     });
   });
 
@@ -129,4 +166,3 @@ describe('kcats', function() {
     });
   });
 });
-
