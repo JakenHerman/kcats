@@ -6,13 +6,13 @@ var kcats = function (maxLen, numStacks) {
     // Raise exception if number of stacks is more than the size of the stack itself.
     throw new Error('Number of stacks should be lesser than maximum stack size');
   }
-  this.maxLen = maxLen;
-  this.numStacks = numStacks;
-  this._top = new Array(this.numStacks);
-  this._k = new Array(this.maxLen);
-  this._alloc = this.maxLen / this.numStacks;
+  this._maxLen = maxLen;
+  this._numStacks = numStacks;
+  this._top = new Array(this._numStacks);
+  this._k = new Array(this._maxLen);
+  this._alloc = this._maxLen / this._numStacks;
 
-  for (var i = 0; i < this.maxLen; i++) {
+  for (var i = 0; i < this._maxLen; i++) {
     this._top[i] = this._alloc * i - 1;
   }
 };
