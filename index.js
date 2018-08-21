@@ -1,18 +1,18 @@
 'use strict';
 var kcats = function (maxLen, numStacks) {
-  num_stacks = num_stacks || 1;
-  max_len = max_len || 0;
-  if (num_stacks > max_len) {
+  numStacks = numStacks || 1;
+  maxLen = maxLen || 0;
+  if (numStacks > maxLen) {
     // Raise exception if number of stacks is more than the size of the stack itself.
     throw new Error('Number of stacks should be lesser than maximum stack size');
   }
-  this._max_len = max_len;
-  this._num_stacks = num_stacks;
-  this._top = new Array(this._num_stacks);
-  this._k = new Array(this._max_len);
-  this._alloc = this._max_len / this._num_stacks;
+  this.maxLen = maxLen;
+  this.numStacks = numStacks;
+  this._top = new Array(this.numStacks);
+  this._k = new Array(this.maxLen);
+  this._alloc = this.maxLen / this.numStacks;
 
-  for (var i = 0; i < this._max_len; i++) {
+  for (var i = 0; i < this.maxLen; i++) {
     this._top[i] = this._alloc * i - 1;
   }
 };
