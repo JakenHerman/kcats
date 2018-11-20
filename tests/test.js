@@ -165,4 +165,19 @@ describe('kcats', function() {
       assert.equal(peek, 'Stack is empty.');
     });
   });
+
+  describe('#._validStacksNumber()', function() {
+    it('Ensures the number of stacks is lower than the total number of elements.',
+    function() {
+      var test, expectedErrorMessage;
+      expectedErrorMessage = 'Number of stacks should be lesser than maximum stack size';
+      test = function(len, stacks) {
+        return new kcats(len, stacks);
+      };
+      assert.throws(test.bind(null, 1, 2), Error, expectedErrorMessage);
+      assert.throws(test.bind(null, 0, 0), Error, expectedErrorMessage);
+      assert.throws(test.bind(null), Error, expectedErrorMessage);
+      assert.throws(test.bind(null, 0, null), Error, expectedErrorMessage);
+    });
+  });
 });
