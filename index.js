@@ -18,6 +18,7 @@ var kcats = function (maxLen, numStacks) {
 };
 var method = kcats.prototype;
 
+
 method._isEmpty = function(topIndex) {
   return this._top[topIndex] === this._alloc * topIndex - 1;
 };
