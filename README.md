@@ -1,7 +1,7 @@
 # kcats
 A stack implementation for node
 
-[![NPM](https://nodei.co/npm/kcats.png)](https://nodei.co/npm/kcats/)
+[![NPM](https://nodei.co/npm/kcats.png)](https://nodei.co/npm/kcats.png)
 
 [![Build Status](https://travis-ci.org/JakenHerman/kcats.svg?branch=master)](https://travis-ci.org/JakenHerman/kcats)
 
